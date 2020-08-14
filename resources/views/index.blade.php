@@ -89,8 +89,30 @@
         </div>
       </div>
       <div id="section4" class="container-fluid">
+        <div class="container">
         <h1>Contact Us</h1>
-        <p>This block showcases CSS3 animations. The first image is constantly rotating. The second image is constantly panning.</p>
+          <form method="POST" action="/" class="was-validated">
+            @csrf
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
 
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <input type="textarea" class="form-control" id="message" placeholder="Enter message" name="message" required>
+
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+                <div class="invalid-feedback">Check this checkbox to continue.</div>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
     </body>
 </html>
