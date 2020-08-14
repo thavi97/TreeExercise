@@ -30,12 +30,13 @@ class IndexController extends Controller
   {
 
     $data = request()->validate([
+      'name' => 'required',
       'email' => 'required|email',
       'message' => 'required'
     ]);
 
     Mail::to('test@test.com')->send(new ContactFormMail($data));
-    echo "Email has been sent";
+    return view('email_sent');
   }
 
   /**

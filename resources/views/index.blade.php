@@ -37,30 +37,42 @@
 
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="#">thisisthetree</a>
+        <a class="navbar-brand" href="/">thisisthetree</a>
 
         <!-- Links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#section1">Move Right</a>
+            <a class="nav-link" href="#section1">Welcome</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section2">Hover</a>
+            <a class="nav-link" href="#section2">Move Right</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section3">Rotate</a>
+            <a class="nav-link" href="#section3">Hover</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section4">Rotate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section5">Contact</a>
           </li>
         </ul>
       </nav>
 
       <div id="section1" class="container-fluid">
+        <h1 class="center">Welcome</h1>
+        <p class="center-text">Please look at the showcase of animations and the contact form below.</p>
+        <p>{{$verification ?? ''}}</p>
+      </div>
+
+      <div id="section2" class="container-fluid">
         <h1>Move Right</h1>
         <p>This block showcases a jQuery onclick event. Click the image below to move it!</p>
         <div class="moveright">
            <img src="/img/ladybird.jpg" alt="ladybird">
         </div>
       </div>
-      <div id="section2" class="container-fluid">
+      <div id="section3" class="container-fluid">
         <h1>Hover</h1>
         <p>This block showcases two hover events. The image on the left is a CSS hover. The image on the right is a jQuery hover.</p>
         <div class="col-lg-12">
@@ -74,7 +86,7 @@
           </div>
         </div>
       </div>
-      <div id="section3" class="container-fluid">
+      <div id="section4" class="container-fluid">
         <h1>Rotate</h1>
         <p>This block showcases CSS3 animations. The first image is constantly rotating. The second image is constantly panning.</p>
         <div class="col-lg-12">
@@ -88,28 +100,25 @@
           </div>
         </div>
       </div>
-      <div id="section4" class="container-fluid">
+      <div id="section5" class="container-fluid">
         <div class="container">
         <h1>Contact Us</h1>
           <form method="POST" action="/" class="was-validated">
             @csrf
             <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
-
               <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <input type="textarea" class="form-control" id="message" placeholder="Enter message" name="message" required>
-
+              <textarea class="form-control" id="message" name="message" placeholder="Enter message" rows="4" cols="50" required></textarea>
               <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
-                <div class="invalid-feedback">Check this checkbox to continue.</div>
-              </label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
